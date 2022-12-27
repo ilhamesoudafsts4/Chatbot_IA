@@ -1,0 +1,127 @@
+{"intents": [
+
+  {"tag": "greeting",
+   "patterns": ["Hello","Hi there", "How are you", "Is anyone there?", "Good day"],
+   "responses": [" thanks for asking", "Good to see you again", "Hi there, how can I help?"],
+   "context": [""]
+  },
+  {"tag": "goodbye",
+   "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+   "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+   "context": [""]
+  },
+  {"tag": "thanks",
+   "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+   "responses": ["Happy to help!", "Any time!", "My pleasure"],
+   "context": [""]
+  },
+  {"tag": "noanswer",
+   "patterns": [""],
+   "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+   "context": [""]
+  },
+ 
+  {"tag": "help",
+   "patterns": ["q", "what can you do", "can you help me?", "can i tell you something"],
+   "responses": ["I'm here to help you!", "I can help you with whatever you tell me to."],
+  "context_set": ""
+  },
+  {"tag": "profile_picture",
+  "patterns": ["I can't change my profile picture", "i have probeme in changing my profile picture"],
+  "responses": ["If you're using the mobile app, make sure you're using the latest version", "If you're using the Facebook mobile app, close out of the app and reopen.","If you're on a mobile device, make sure you're connected to a reliable data or Wi-Fi network.","If you're on a computer, refresh the page and try again.","Wait and try changing your profile picture later."
+  ],
+   "context_set": ""
+  },
+  {"tag": "profile_loading",
+  "patterns": ["My profile is loading slowly"],
+  "responses": ["If you're on a mobile device, make sure you're connected to a reliable data or Wi-Fi network. If you're not, try again once you have a better connection.", "If you're using the Facebook mobile app, close out of the app, then reopen it.","If you're on a computer, refresh the page."],
+  "context": [""]
+  },
+  {"tag": "edit_profile_photo",
+  "patterns": ["How do I change my profile photo on Tchat?","How do I add my profile photo on Tchat"],
+  "responses": [" 1-Click your profile picture in the top right of Tchat. 2-Click Edit Profile photo in the bottom right of your profile photo.3-Click Select Photo. If you don't currently have a Profile photo, click Upload Photo.4-Click Upload Photo to upload a new photo from your device or Select Photo to pick a photo from one of your Tchat albums.5-Once you choose a photo, you can reposition it by clicking the image and dragging it up or down. 6-Click Save Changes."],
+  "context": [""]
+  },
+  {"tag": "Manage_Posts",
+  "patterns": ["How do i share something on Tchat"],
+  "responses": ["From the top of your Feed, Add a text update or click the type of post you'd like to share (example: Photo/Video, Feeling/Activity)."],
+  "context": [""]
+  },
+  {"tag": "remove_Post",
+  "patterns": ["How do i remove something on my Tchat timeline "],
+  "responses": ["Click your profile picture in the top right of Tchat.Find the post and click three point in the top right.Select Delete post or Hide from profile from the dropdown menu."],
+  "context": [""]
+  },
+  {"tag": "confirm_my_mobile_number",
+  "patterns": ["I didn't receive the code from Facebook to confirm my mobile phone number"],
+  "responses": ["you have 4 options : 1-Check the number that you entered 2-Get a phone call with the code 3-Re-send the SMS 4-Use an email instead"],
+  "context": [""]
+  },
+  {"tag": "check_number",
+  "patterns": ["Check the number that i entered"],
+  "responses": ["to view the mobile number you entered.If you entered the wrong number, click Wrong number?.Enter the correct number and click Add."],
+  "context": [""]
+  },
+  {"tag": "confirmation_using_call",
+  "patterns": ["Get a phone call with the code"],
+  "responses": ["Click Did you not get the SMS?Click Call [mobile number]."],
+  "context": [""]
+  },
+  {"tag": "confirmation_using_SMS",
+  "patterns": ["Re-send the SMS"],
+  "responses": ["Click Did you not get the SMS? Click Send SMS Again."],
+  "context": [""]
+  },
+  {"tag": "confirmation_using_email",
+  "patterns": ["Use an email instead"],
+  "responses": ["Click Wrong number? Enter your email and click Add. Try confirming your Tchat account with your email instead of a mobile number."],
+  "context": [""]
+  },
+  {"tag": "Add_Friends",
+  "patterns": ["how to add friends on Tchat","How do i add friends on Tchat"],
+  "responses": ["Click the search bar in the top left of any Tchat page. Type your friend's name into the search bar and click search, To send someone a friend request, click add icon next to their profile picture."],
+  "context": [""]
+  },
+  {"tag": "Accept_a_friend_request",
+  "patterns": ["how do i accept a friend request on Tchat","accept friend", "accept a request"],
+  "responses": ["Click Confirm next to a request to accept it."],
+  "context": [""]
+  },
+  {"tag": "Delete_a_friend_request",
+  "patterns": ["how do i delete a friend request on Tchat","delete friend", "delete a request"],
+  "responses": ["Click Delete or Delete Request.     "],
+  "context": [""]
+  },
+  {"tag": "send_a_friend_request",
+  "patterns": ["i can't send a friend request"],
+  "responses": ["You may have already sent them a friend request.Check if the friend requests you’ve sent are still pending."],
+  "context": [""]
+  },
+  {"tag": "can't_accept_a_friend_request",
+  "patterns": ["i can't accept a friend request"],
+  "responses": ["You or the person you want to add have reached the friend limit.If you want to send another friend request, unfriend someone else first."],
+  "context": [""]
+  },
+  {"tag": "Friends",
+  "patterns": ["who i should send a friend request?","send a friend request"],
+  "responses": ["We recommend sending friend requests to people you know in real life, or people who have the same interest as you :like  Frinds ,Coworkers or Classmates."],
+  "context": [""]
+  },
+  {"tag": "Block",
+  "patterns": ["what is block on Tcaht?","block someone on Tchat?","block someone profile"],
+  "responses": ["When you block a profile on Tchat, that profile will no longer be able to do things such as tag you or see things you post on your timeline.Keep in mind:When you unblock someone's profile, you won't automatically be friends again. If you block a profile you're friends with and then unblock it, you'll need to send that profile a new friend request."],
+  "context": [""]
+  },
+  {"tag": "Messages",
+  "patterns": ["who i can send messages on Tcaht?","messages on Tchat?"],
+  "responses": ["You can send messages to anyone on Tchat. Messages you send to people you're not friends with may arrive in their Message Requests folder. Your messages also won't reach people who may have blocked you on Tchat ."],
+  "context": [""]
+  },
+  {"tag": "Delete_Message",
+  "patterns": ["can i retrieve deleted messages on Tchat?"],
+  "responses": ["No. Deleting a message permanently removes it from your Chat list. Instead, you can archive a message to hide it from your Chat list."],
+  "context": [""]
+  }
+  
+]
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="{{ url_for('static',filename='styless/style1.css') }}">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Formulaire Login</title>
+      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+      
+  </head> 
+<body>
+
+  
+  
+
+    <div class="wrapper">
+        <div class="container">
+          <div class="tabs">
+            <div class="block-wrap">
+
+              <div class="logoo">
+                <img class="fitt-picture" src="{{ url_for('static',filename='styless/images/logo.jfif') }}">
+              </div>  
+              </br></br>
+            </div>
+
+            <ul>
+              <li class="sign_in_li">Se connecter</li>
+              <li class="sign_up_li">S'inscrire</li>
+            </ul>
+          </div>
+      
+        <div class="sign_in">
+          <form action="/login" method="POST">
+            {% if mesage is defined and mesage %}
+            <div class="alert alert-warning">{{ mesage }}</div>
+            {% endif %}
+            <div class="input_field">
+              <input type="Email" id="email" name="email" placeholder="E-mail" class="input" required>
+              <p id="emailError"></p>
+              <div class="icon"><i class="fas fa-user"></i></div>
+          
+            </div>
+            <div class="input_field">
+              <input type="password" id="pswd"name="password" placeholder="mot de passe" class="input" required>
+              <p id="pswdError"></p>
+              <div class="icon"><i class="fas fa-lock"></i></div>
+            </div>
+            <div class="option_div">
+              <div class="check_box">
+                <input type="checkbox">
+                <span>souviens-moi</span>
+              </div>
+              <div class="forget_div">
+                <a href="#">mot de passe oublier ?</a>
+              </div>
+            </div>
+            <div class="form-group">
+                <button class="button" type="submit">Se connecter</button>
+            </div>
+          </form>
+        </div>
+        
+        <div class="sign_up">
+          <form action="/register" method="POST">
+            <div class="input_field">
+              <input type="text" name="username" placeholder=" Nom Complet" class="input" required>
+              <div class="icon"><i class="fas fa-user"></i></div>
+            </div>
+            <div class="input_field">
+              <input type="Email" name="email" placeholder="E-mail" class="input" required>
+              <div class="icon"><i class="fas fa-user"></i></div>
+              
+              
+            </div>
+            <div class="input_field">
+              <input type="password" name="password" placeholder="mot de passe" class="input" required>
+              <div class="icon"><i class="fas fa-lock"></i></div>
+            </div>
+            <div class="form-group">
+                    <button class="button" type="submit">S'inscrire</button>
+          </div>
+
+          </form>
+      
+        </div>
+
+    <!-- google	 -->
+  </br>
+         
+            
+  <div class="social-btn">
+      
+      <button type="button" class="facebook-btn"> <i class="fab fa-github"></i><a  href="{{url_for('github_login')}}">Github</a> </button>
+      <button type="button" class="google-btn"><i class="fab fa-google-plus-square"></i> <a href="{{url_for('google_login')}}">Google</a> </button>
+  </div>
+  
+      </br><br>
+    
+
+      
+      </div>
+    </div>
+    <div class="wrap">
+        <img class="fit-picture" src="{{ url_for('static',filename='styless/images/OPACITY.png') }}" >
+      <div class="test">
+          <div class="transbox">
+              <p>Bienvenue sur Architeo</p>
+          </div>
+          <div class="button1">
+            <button class="btn-3"> <a class="bottom" href="{{url_for('index')}}">Retour au Chatboot  </a></button>
+          </div>
+    
+      </div>
+    </div>
+
+    <script src="{{ url_for('static',filename='styless/min.js') }}"></script>
+
+
+  
+
+</body>
+</html>

@@ -1,0 +1,274 @@
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body{
+    font-family: Helvetica;
+    -webkit-font-smoothing: antialiased;
+    background: rgb(255, 255, 255);
+    overflow: auto;
+}
+h2{
+    text-align:  left;
+    margin-left:120px ;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgb(8, 8, 8);
+    padding: 20px 0;
+}
+
+.btn-1{
+  background: #0058ff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 3px;
+  align-content: right;
+  
+}
+.btn-1 a{
+  text-decoration: none;
+  color: white;
+}
+
+.btn-1 a:hover{
+  text-decoration: none;
+  color: white;
+
+}
+
+.btn-1:hover {
+  background: #0004ff;
+  letter-spacing: 2px;
+}
+
+/* Table Styles */
+
+.table-wrapper{
+    margin: 20px 120px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 13px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #000000;
+   
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #000000;
+    
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+
+    
+}
+
+button {
+    background-color:rgb(236, 42, 16);
+    font-weight: bold;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    
+    transition: all .15s cubic-bezier(0.4,0,0.2,1);
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: rgb(236, 42, 16);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+
+  button:active {
+    position: relative;
+    top: 1px;
+    right: 1px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+
+
+
+  .button1 {
+    background-color:rgb(10, 236, 78);
+    font-weight: bold;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+   
+    transition: all .15s cubic-bezier(0.4,0,0.2,1);
+    border: none;
+    cursor: pointer;
+  }
+
+  .button1:hover {
+    background-color: rgb(45, 243, 134);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+
+  .button1:active {
+    position: relative;
+    top: 1px;
+    right: 1px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+
+
+
+  .button2 {
+    background-color:rgb(10, 134, 236);
+    font-weight: bold;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    
+    transition: all .15s cubic-bezier(0.4,0,0.2,1);
+    border: none;
+    cursor: pointer;
+  }
+
+  .button2:hover {
+    background-color: rgb(10, 134, 236);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+
+  .button2:active {
+    position: relative;
+    top: 1px;
+    right: 1px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+
+
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap');
+
+
+
+
+.container{
+  
+  display: flex;
+  justify-content: center;
+  align-items:center;
+ 
+}
+
+.card{
+  width: 40rem;
+ 
+  background: rgb(201, 24, 24);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+  position : relative;
+  color: #434343;
+}
+
+.card .card__container{
+  padding : 1rem;
+  width: 100%;
+  height: 100%;
+  background: white;
+  
+}
+
+.card .card__header{
+  margin-bottom: 1rem;
+  
+}
+
+
+

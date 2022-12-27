@@ -1,0 +1,184 @@
+
+
+<body>
+  <style>
+    .status.delivered {
+    padding: 2px 4px;
+    background: #8de02c;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  #deux {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  
+}
+</style>
+<div class="container">
+     <div id="deux"> 
+       <img src="data:image/png;base64,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" class="rounded-circle" alt="Cinque Terre" width="50px">
+     </div>
+   <center> <h2> gestion des RDV Architeo</h2></center>
+   <hr/>
+ <head>
+  <title>liste  rendez-vous</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ 
+  <br />
+  <div class="container">
+    <div class="row">
+        
+ 
+</div>
+
+  <div class="container box">
+  
+   <div class="panel panel-default">
+    <div class="panel-heading"></div>
+    <div class="panel-body">
+     <div class="form-group">
+       
+      <input type="text" name="search" id="search" class="form-control" placeholder="Search Customer Data" />
+     </div>
+     <div class="table-responsive">
+      <h3 align="center">les rendez_vous des condidats <span id="total_records"></span></h3>
+      </br>
+      <table class="table table-striped table-bordered">
+       <thead>
+        <tr>
+          <td>Nom </td>
+          <td>Prénom</td>
+          <td>date</td>
+          <td>email</td>
+          <td>Répondre</td>
+          
+          <td>tel</td>
+          
+          <td>Annulé</td>
+          
+          
+         
+          
+        </tr>
+       </thead>
+       <tbody>
+        
+          <td> {% for todo in rdvcnd %}
+            <div class="todo">
+                <tr>
+                  <td>{{ todo[0] }}</td>
+                  <td>{{ todo[1]}}</td>
+                  <td>{{ todo[2]}}</td>
+                  <td>{{ todo[3]}}</td>
+                  <td> <form action="/send" method="post"> 
+                    
+                        
+                     
+                    
+                        <textarea class="" name="Solution"> </textarea>
+                     
+                       <input type="submit" value="Répondre" class="status delivered"></form>
+                  
+               
+                 </td>
+                  <td>{{ todo[4] }}</td>
+                  
+                  <th>
+                     
+                    <a href="" class="btn btn-secondary btn-sm">Supprimé RDV</a>
+                   
+                   </th>
+                
+             
+                
+                 </tr>
+                 {% endfor %}
+     
+  
+  
+</div>
+
+       </tbody>
+      </table>
+     </div>
+      </br></br>
+
+     <div class="table-responsive">
+      <h3 align="center">les rendez_vous des partenariats <span id="total_records"></span></h3>
+      </br>
+      <table class="table table-striped table-bordered">
+       <thead>
+        <tr>
+          <td>Nom </td>
+          <td>Prénom</td>
+          <td>date</td>
+          <td>email</td>
+          <td>Répondre</td>
+          
+          <td>tel</td>
+          
+          <td>Annulé</td>
+          
+          
+         
+          
+        </tr>
+       </thead>
+       <tbody>
+        
+          <td> {% for todo in rdvprt %}
+            <div class="todo">
+                <tr>
+                  <td>{{ todo[0] }}</td>
+                  <td>{{ todo[1]}}</td>
+                  <td>{{ todo[2]}}</td>
+                  <td>{{ todo[3]}}</td>
+                  <td> <form action="/send" method="post"> 
+                    
+                        
+                     
+                    
+                        <textarea class="" name="Solution"> </textarea>
+                     
+                       <input type="submit" value="Répondre" class="status delivered"></form>
+                  
+               
+                 </td>
+                  <td>{{ todo[4] }}</td>
+                  
+                  <th>
+                     
+                    <a href="" class="btn btn-secondary btn-sm">Supprimé RDV</a>
+                   
+                   </th>
+                
+             
+                
+                 </tr>
+                 {% endfor %}
+     
+  
+  
+</div>
+
+       </tbody>
+      </table>
+     </div>
+
+
+    </div>    
+   </div>
+  </div>
+ </body>
+</html>
+
+</table>
+
+
+
+

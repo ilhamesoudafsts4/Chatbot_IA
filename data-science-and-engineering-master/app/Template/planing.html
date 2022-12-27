@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static',filename='styless/style4.css') }}">
+        
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha256-siyOpF/pBWUPgIcQi17TLBkjvNgNQArcmwJB8YvkAgg=" crossorigin="anonymous" />
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha256-bqVeqGdJ7h/lYPq6xrPv/YGzMEb6dNxlfiTUHSgRCp8=" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+    <div class="table-responsive">
+        <table align="center" >
+        <tr>
+        <td align="left" ><h2>Planing Societe</h2></td>
+        <td align="center" ><h2> </h2></td>
+        <td align="center"><button class="btn-1"><a href="http://127.0.0.1:5000/">Retour au Chatboot</a></button></td>
+        </tr>
+        </table>
+    <div>
+        <div class="table-wrapper">
+        {% for mesage in get_flashed_messages() %}
+            {% if mesage == secuss %}
+               <script> 
+               Swal.fire(
+                'le rendez-vous a été confirmé',
+                'Vous avez réserveé succesivement votre RDV le : {{secuss}}',
+                'success'
+                )
+              </script>
+            {% else %}
+
+            <script>
+            
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '{{ mesage }}',
+                
+                })
+            
+            </script>
+
+            {% endif %}
+                
+        {% endfor %}
+        <div class="table-responsive">
+            <table class="fl-table">
+                <thead>
+                <tr>
+                    <th>RDV</th>
+                    <th>lundi</th>
+                    <th>Mardi</th>
+                    <th>Mercredi</th>
+                    <th>Jeudi</th>
+                    <th>Vendredi</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                
+                <tr>
+                    <td>9H00</td>
+                    <td><button class="button1" data-toggle="modal" data-target="#Lundi9">Ouvert</button></td>
+                    <td><button class="button" data-toggle="modal" data-target="#dateFerme">Fermé</button></td>
+                    <td><button class="button1" data-toggle="modal" data-target="#Mercredi9" >Ouvert</button></td>
+                    <td><button class="button" data-toggle="modal" data-target="#dateFerme">Fermé</button></td>
+                    <td><button class="button" data-toggle="modal" data-target="#dateFerme">Fermé</button></td>
+
+                </tr>
+                <tr>
+                    <td>10H00</td>
+                    <td><button class="button2" data-toggle="modal" data-target="#Lundi10" >Ouvert</button></td>
+                    <td><button class="button" data-toggle="modal" data-target="#dateFerme">Fermé</button></td>
+                    <td><button class="button2" data-toggle="modal" data-target="#Mercredi10">Ouvert</button></td>
+                    <td><button class="button" data-toggle="modal" data-target="#dateFerme">Fermé</button></td>
+                    <td><button class="button" data-toggle="modal" data-target="#dateFerme">Fermé</button></td>
+
+
+                </tr>
+                <tr>
+                    <td>11H00</td>
+                    <td><button class="button1" data-toggle="modal" data-target="#Lundi11" >Ouvert</button></td>
+                    <td><button class="button" data-toggle="modal" data-target="#dateFerme">Fermé</button></td>
+                    <td><button class="button1" data-toggle="modal" data-target="#Mercredi11" >Ouvert</button></td>
+                    <td><button class="button" data-toggle="modal" data-target="#dateFerme">Fermé</button></td>
+                    <td><button class="button" data-toggle="modal" data-target="#dateFerme">Fermé</button></td>
+
+                </tr>
+            
+                
+                
+                <tr>
+                    <td>16H00</td>
+                    <td><button class="button2" data-toggle="modal" data-target="#Lundi16">Ouvert</button></td>
+                    <td><button class="button" data-toggle="modal" data-target="#dateFerme">Fermé</button></td>
+                    <td><button class="button2" data-toggle="modal" data-target="#Mercredi16" >Ouvert</button></td>
+                    <td><button class="button" data-toggle="modal" data-target="#dateFerme">Fermé</button></td>
+                    <td><button class="button" data-toggle="modal" data-target="#dateFerme">Fermé</button></td>
+
+                </tr>
+                
+                
+                
+                <tbody>
+
+            </table>
+             </div>
+        </div>
+
+        <!-- Modal lundi 9 -->
+            <div class="modal fade" id="Lundi9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">RDV Partenariat</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <form action="/RDVPart" method="POST">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <p>Veuillez choisir une date dont le jour est <strong>LUNDI ou MERCREDI</strong> soit à <strong>9H00 ou 11H00 </strong> sinon RDV automatiquement rejeté :</p>
+                                        <div>
+                                                    <div class="form-group">
+                                                        <label for="recipient-name" class="form-control-label">Nom:</label>
+                                                        <input type="text" class="form-control" id="recipient-name" name="nameprtl9" placeholder="Nom" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="form-control-label">Prénom:</label>
+                                                        <input type="text" class="form-control" id="recipient-name" name="prenomprtl9" placeholder="prénom" required>
+
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="form-control-label">date && heure :</label>
+                                                        <input id="party" class="form-control" type="datetime-local" name="dateprtl9" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="form-control-label">Email</label>
+                                                        <input class="form-control" type="email" id="message-text" name="emailprtl9" placeholder="Eamil" required>
+                                                    
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="form-control-label">TELE</label>
+                                                        <input class="form-control" type="tel" id="message-text" name="teleprtl9" placeholder="Telephone" required>
+                                                    
+                                                    </div>
+
+                                                
+                                                
+                                        </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="submit" name="submit_button" value="Lundi9" class="btn btn-success">Confirmer</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Modal -->
+
+
+
+        <!-- Modal lundi 11 -->
+            <div class="modal fade" id="Lundi11" tabindex="-1" role="dialog" aria-labelledby="TESTModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">RDV Partenariat</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <form action="/RDVPart" method="POST">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <p>Veuillez choisir une date dont le jour est <strong>LUNDI ou MERCREDI</strong> soit à <strong>9H00 ou 11H00 </strong> sinon RDV automatiquement rejeté :</p>
+                                        <div>
+                                                    <div class="form-group">
+                                                        <label for="recipient-name" class="form-control-label">Nom:</label>
+                                                        <input type="text" class="form-control" id="recipient-name" name="nameprtl11" placeholder="Nom" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="form-control-label">Prénom:</label>
+                                                        <input type="text" class="form-control" id="recipient-name" name="prenomprtl11" placeholder="prénom" required>
+
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="form-control-label">date && heure :</label>
+                                                        <input id="party" class="form-control" type="datetime-local" name="dateprtl11" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="form-control-label">Email</label>
+                                                        <input class="form-control" type="email" id="message-text" name="emailprtl11" placeholder="Eamil" required>
+                                                    
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="form-control-label">TELE</label>
+                                                        <input class="form-control" type="tel" id="message-text" name="teleprtl11" placeholder="Telephone" required>
+                                                    
+                                                    </div>
+
+                                                
+                                                
+                                        </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="submit" name="submit_button" value="Lundi11" class="btn btn-success">Confirmer</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Modal TEST -->
+
+        <!-- Modal mERCREDI 9 -->
+            <div class="modal fade" id="Mercredi9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">RDV Partenariat</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <form action="/RDVPart" method="POST">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <p>Veuillez choisir une date dont le jour est <strong>LUNDI ou MERCREDI</strong> soit à <strong>9H00 ou 11H00 </strong> sinon RDV automatiquement rejeté :</p>
+                                        <div>
+                                                    <div class="form-group">
+                                                        <label for="recipient-name" class="form-control-label">Nom:</label>
+                                                        <input type="text" class="form-control" id="recipient-name" name="nameprtm9" placeholder="Nom" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="form-control-label">Prénom:</label>
+                                                        <input type="text" class="form-control" id="recipient-name" name="prenomprtm9" placeholder="prénom" required>
+
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="form-control-label">date && heure :</label>
+                                                        <input id="party" class="form-control" type="datetime-local" name="dateprtm9" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="form-control-label">Email</label>
+                                                        <input class="form-control" type="email" id="message-text" name="emailprtm9" placeholder="Eamil" required>
+                                                    
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="form-control-label">TELE</label>
+                                                        <input class="form-control" type="tel" id="message-text" name="teleprtm9" placeholder="Telephone" required>
+                                                    
+                                                    </div>
+
+                                                
+                                                
+                                        </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="submit" name="submit_button" value="Mercredi9" class="btn btn-success">Confirmer</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Modal -->
+
+        <!-- Modal lundi 11 -->
+            <div class="modal fade" id="Mercredi11" tabindex="-1" role="dialog" aria-labelledby="TESTModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">RDV Partenariat</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <form action="/RDVPart" method="POST">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <p>Veuillez choisir une date dont le jour est <strong>LUNDI ou MERCREDI</strong> soit à <strong>9H00 ou 11H00 </strong> sinon RDV automatiquement rejeté :</p>
+                                        <div>
+                                                    <div class="form-group">
+                                                        <label for="recipient-name" class="form-control-label">Nom:</label>
+                                                        <input type="text" class="form-control" id="recipient-name" name="nameprtm11" placeholder="Nom" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="form-control-label">Prénom:</label>
+                                                        <input type="text" class="form-control" id="recipient-name" name="prenomprtm11" placeholder="prénom" required>
+
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="form-control-label">date && heure :</label>
+                                                        <input id="party" class="form-control" type="datetime-local" name="dateprtm11" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="form-control-label">Email</label>
+                                                        <input class="form-control" type="email" id="message-text" name="emailprtm11" placeholder="Eamil" required>
+                                                    
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="form-control-label">TELE</label>
+                                                        <input class="form-control" type="tel" id="message-text" name="teleprtm11" placeholder="Telephone" required>
+                                                    
+                                                    </div>
+
+                                                
+                                                
+                                        </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="submit" name="submit_button" value="Mercredi11" class="btn btn-success">Confirmer</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Modal TEST -->
+
+
+
+
+        
+
+
+
+
+
+
+
+<!-- Modal lundi 10 -->
+    <div class="modal fade" id="Lundi10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" 
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">RDV Candidat </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form action="/RDVCandidat" method="POST">
+
+                    <div class="modal-body">
+                    <p>Veuillez choisir une date dont le jour est <strong>LUNDI ou MERCREDI</strong> soit à <strong>10H00 ou 16H00 </strong> sinon RDV automatiquement rejeté :</p>
+                        <div class="form-group">
+                            <label> Nom</label>
+                            <input type="text" name="namecndl10" class="form-control" placeholder="Nom" required >
+                        </div>
+
+                        <div class="form-group">
+                            <label> Prénom </label>
+                            <input type="text" name="prenomcndl10" class="form-control" placeholder="Prénom" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label> date</label>
+                            <input id="party" class="form-control" type="datetime-local" name="datecndl10" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label> email </label>
+                            <input type="email" class="form-control" id="message-text" name="emailcndl10" placeholder="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label> tele </label>
+                            <input class="form-control" type="tel" id="message-text" name="telecndl10" placeholder="telephone" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="submit" name="submit_button" value="Lundi10" class="btn btn-primary">Confirmer</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+<!-- Modal lundi 16 -->
+
+    <div class="modal fade" id="Lundi16" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" 
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">RDV Candidat </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form action="/RDVCandidat" method="POST">
+
+                    <div class="modal-body">
+                    <p>Veuillez choisir une date dont le jour est <strong>LUNDI ou MERCREDI</strong> soit à <strong>6H00 ou 16H00 </strong> sinon RDV automatiquement rejeté :</p>
+                        <div class="form-group">
+                            <label> Nom</label>
+                            <input type="text" name="namecndl16" class="form-control" placeholder="Nom" required >
+                        </div>
+
+                        <div class="form-group">
+                            <label> Prénom </label>
+                            <input type="text" name="prenomcndl16" class="form-control" placeholder="Prénom" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label> date</label>
+                            <input id="party" class="form-control" type="datetime-local" name="datecndl16" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label> email </label>
+                            <input type="email" class="form-control" id="message-text" name="emailcndl16" placeholder="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label> tele </label>
+                            <input class="form-control" type="tel" id="message-text" name="telecndl16" placeholder="telephone" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="submit" name="submit_button" value="Lundi16" class="btn btn-primary">Confirmer</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+<!-- Modal Mercredi 10 -->
+    <div class="modal fade" id="Mercredi10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" 
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">RDV Candidat </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form action="/RDVCandidat" method="POST">
+
+                    <div class="modal-body">
+                    <p>Veuillez choisir une date dont le jour est <strong>LUNDI ou MERCREDI</strong> soit à <strong>10H00 ou 16H00 </strong> sinon RDV automatiquement rejeté :</p>
+                        <div class="form-group">
+                            <label> Nom</label>
+                            <input type="text" name="namecndm10" class="form-control" placeholder="Nom" required >
+                        </div>
+
+                        <div class="form-group">
+                            <label> Prénom </label>
+                            <input type="text" name="prenomcndm10" class="form-control" placeholder="Prénom" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label> date</label>
+                            <input id="party" class="form-control" type="datetime-local" name="datecndm10" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label> email </label>
+                            <input type="email" class="form-control" id="message-text" name="emailcndm10" placeholder="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label> tele </label>
+                            <input class="form-control" type="tel" id="message-text" name="telecndm10" placeholder="telephone" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="submit" name="submit_button" value="Mercredi10" class="btn btn-primary">Confirmer</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+<!-- Modal Mercredi 10 -->
+    <div class="modal fade" id="Mercredi16" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" 
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">RDV Candidat </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form action="/RDVCandidat" method="POST">
+
+                    <div class="modal-body">
+                    <p>Veuillez choisir une date dont le jour est <strong>LUNDI ou MERCREDI</strong> soit à <strong>10H00 ou 16H00 </strong> sinon RDV automatiquement rejeté :</p>
+                        <div class="form-group">
+                            <label> Nom</label>
+                            <input type="text" name="namecndm16" class="form-control" placeholder="Nom" required >
+                        </div>
+
+                        <div class="form-group">
+                            <label> Prénom </label>
+                            <input type="text" name="prenomcndm16" class="form-control" placeholder="Prénom" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label> date</label>
+                            <input id="party" class="form-control" type="datetime-local" name="datecndm16" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label> email </label>
+                            <input type="email" class="form-control" id="message-text" name="emailcndm16" placeholder="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label> tele </label>
+                            <input class="form-control" type="tel" id="message-text" name="telecndm16" placeholder="telephone" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="submit" name="submit_button" value="Mercredi16" class="btn btn-primary">Confirmer</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+<div class="modal" id="dateFerme" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Crénaux Fermé</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Ce crénaux est non disponible pour un RDV, Veuillez réserver l'un des crénaux ouvert.</p>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+        <div class="container">
+            <div class="card">
+                <div class="card__container">
+                    
+                <p class="card__body">
+                    <strong>Remarque : </strong>
+                    les créneaux ouvert en <font color="#0000FF">bleu</font> sont dédié au RDV avec des candidats</br> </br>
+                   &nbsp &nbsp  &nbsp  &nbsp  &nbsp   &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  
+                   les créneaux ouvert en <font color="#00FF00">vert</font> sont dédié au RDV avec des partenariats </br> </br>
+                   &nbsp &nbsp  &nbsp  &nbsp  &nbsp   &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  
+                   Veuillez choisir l'un d'eux.
+
+                </p>  
+                </div>
+            </div>
+        </div>
+        
+        <script>
+
+                $(document).ready(function() {
+        $('.datepicker').datepicker();
+        });
+        
+        </script>
+
+    </body>
+</html>

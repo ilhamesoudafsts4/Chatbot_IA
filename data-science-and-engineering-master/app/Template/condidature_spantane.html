@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="{{ url_for('static',filename='styless/style3.css') }}">
+	<title>Responsive Login And Register Form</title>
+</head>
+<body>
+	
+	<div class="container">
+		<form action="/spantane/" class="login active" enctype="multipart/form-data">
+			<h2 class="title">Candidature Spontané</h2>
+			<div class="form-group">
+				<label for="nom">Nom Complet</label>
+				<div class="input-group">
+					<input type="nom" id="nom" name="nom" placeholder="nam complet" required>
+					
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="email">Email</label>
+				<div class="input-group">
+					<input type="email" id="email" name="email" placeholder="Email " required>
+					
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="Telephone">Téléphone</label>
+				<div class="input-group">
+					<input type="tel" id="Telephone" placeholder="Téléphone " name="Tele" pattern="[0-9]{10}" required>
+					
+				</div>
+			</div>
+
+			
+			<div class="form-group">
+				<label for="experience">Nombre d'année d'expérience</label>
+				<div class="input-group">
+					<input type="number" id="experience" name="experience" placeholder=" " required>
+					
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="poste">Poste Souhaité</label>
+				<div class="input-group">
+					<input type="text" id="poste" name="poste" placeholder="poste " required>
+					
+				</div>
+			</div>
+			
+            <div class="form-group">
+			    <div class="input-file-container">
+					<input class="input-file" id="my-file" type="file" multiple enctype="multipart/form-data" name="files[]">
+					<label for="my-file" class="input-file-trigger" tabindex="0" >
+						Entrer Votre CV
+					</label>
+				</div>
+				<p class="file-return"></p>
+			</div>
+			<button type="submit" class="btn-submit">Envoyer</button>
+			
+
+		</form>
+
+		
+	</div>
+
+	<script src="{{ url_for('static',filename='styless/script2.js') }}"></script>
+</body>
+</html>

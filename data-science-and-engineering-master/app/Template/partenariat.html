@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="{{ url_for('static',filename='styless/styles5.css')}}">
+	<title>formulaire recreteurs & partenariats</title>
+</head>
+<body>
+	
+	<div class="container">
+		<form action="#" class="login active">
+			<h2 class="title">Formulaire Recreteurs/Partenariats</h2>
+			<div class="form-group">
+				
+				<div class="input-group">
+					<input type="text" id="nom" name="nom" placeholder="nom complet" required>
+					
+				</div>
+			</div>
+
+			<div class="form-group">
+				
+				<div class="input-group">
+					<input type="email" id="email" name="email" placeholder="Email " required>
+					
+				</div>
+			</div>
+
+			<div class="form-group">
+				
+				<div class="input-group">
+					<input type="tel" id="Telephone" placeholder="Téléphone " name="tel" pattern="[0-9]{10}" required>
+					
+				</div>
+			</div>
+			<div class="form-group">
+				
+				<div class="input-group">
+					<input type="text" id="adresse" name="adresse" placeholder="Adresse " required>
+					
+				</div>
+			</div>
+
+			<div class="form-group">
+				
+				<div class="input-group">
+					<input type="text" id="raison" name="raison" placeholder="Raison Socilae" required>
+					
+				</div>
+			</div>
+
+			
+			
+
+			<div class="form-group">
+				
+				<div class="input-group">
+					<input type="number" id="nombre" name="experience" placeholder="Nombre d'Employés " required>
+					
+				</div>
+			</div>
+
+			<div class="form-group">
+				
+				<div class="input-group">
+					<input type="text" id="typepart" name="typepart" placeholder="type de Partenariat " required>
+					
+				</div>
+			</div>
+
+			<div class="form-group">
+				
+				<div class="input-group">
+					<textarea type="text" id="cmnt" name="cmnt" placeholder="commentaire" required></textarea>
+					
+				</div>
+			</div>
+			
+			
+            <div class="form-group">
+			    <div class="input-file-container">
+					<input class="input-file" id="my-file" type="file">
+					<label for="my-file" class="input-file-trigger" tabindex="0">
+						Pièces jointes
+					</label>
+				</div>
+				<p class="file-return"></p>
+			</div>
+			<button type="submit" class="btn-submit">Envoyer</button>
+			
+
+		</form>
+
+		
+	</div>
+
+	<script src="{{ url_for('static',filename='styless/script1.js') }}"></script>
+</body>
+</html>
